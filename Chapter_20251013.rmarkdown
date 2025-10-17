@@ -191,7 +191,7 @@ plotRGB(rgb,
      main="RGB Orthophoto Showing Plot Boundaries and Study Area") # Add RGB orthophoto
 plot(st_geometry(plots), add=TRUE, border="white", lwd=1) # Add Plots
 plot(st_geometry(study_area), add=TRUE, border="yellow", lwd=2) # Add Study Area
-sbar(500, type="bar", xpd=TRUE, below="meters", divs=4)
+sbar(200, type="line", xy= "bottom", divs=8, below="meters", col= "black")
 north(type=1) # Add scalebar and compass
 ```
 
@@ -253,7 +253,7 @@ plot(ndvi,
      main="NDVI Orthophoto Showing Plot Boundaries and Study Area")
 plot(st_geometry(plots), add=TRUE, border="white", lwd=1)
 plot(st_geometry(study_area), add=TRUE, border="black", lwd=2)
-sbar(500, type="bar", xpd=TRUE, below="meters", divs=4)
+sbar(200, type="line", xy= "bottom", divs=8, below="meters", col= "black")
 north(type=1)
 ```
 
@@ -355,7 +355,7 @@ Sentinel-2 provides 10-meter resolution, which is suitable for larger agricultur
 plotRGB(sen2, r=1, g=2, b=3, stretch="lin", main="Sentinel-2 True Color Image")
 plot(st_geometry(plots), add=TRUE, border="white", lwd=1)
 plot(st_geometry(study_area), add=TRUE, border="yellow", lwd=2)
-sbar(500, type="bar", xpd=TRUE, below="meters", divs=2, cex=0.3)
+sbar(200, type="line", xy= "bottom", divs=8, below="meters", col= "yellow")
 north(type=1)
 ```
 
@@ -372,7 +372,7 @@ Finally, compare the same area against Landsat-8's 30-meter resolution (900 m² 
 plotRGB(landsat8, r=1, g=2, b=3, stretch="lin", main="Landsat-8 True Color Image")
 plot(st_geometry(plots), add=TRUE, border="white", lwd=1)
 plot(st_geometry(study_area), add=TRUE, border="yellow", lwd=2)
-sbar(500, type="bar", xpd=TRUE, below="meters", divs=2, cex=0.3)
+sbar(200, type="line", xy= "bottom", divs=8, below="meters", col= "yellow")
 north(type=1)
 ```
 
