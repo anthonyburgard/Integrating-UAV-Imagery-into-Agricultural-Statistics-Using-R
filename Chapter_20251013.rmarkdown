@@ -33,7 +33,7 @@ By the end of this chapter, you will be able to:
 
 ### Study Area
 
-The study area comprises a single census enumeration area located on the northeastern coast of Rarotonga island in the Cook Islands encompassing 17.6 hectares. This area was selected to enable cross-validation with area estimates from the 2022 Agriculture Census and post-Agriculture Census enumeration survey. The terrain in the study area is characterized by flat topography extending from inland residential areas to the beach and ocean along the eastern boundary. Land use is mixed, including residential, sports facilities (i.e., rugy field), and fragmented agricultural plots scattered throughout the area.
+The study area comprises a single census enumeration area located on the northeastern coast of Rarotonga island in the Cook Islands encompassing 17.6 hectares. This area was selected to enable cross-validation with area estimates from the 2022 Agriculture Census and post-Agriculture Census enumeration survey. The terrain in the study area is characterized by flat topography extending from inland residential areas to the beach and ocean along the eastern boundary. Land use is mixed, including residential, sports facilities (i.e., rugby field), and fragmented agricultural plots scattered throughout the area.
 
 ### UAV Image Acquisition and Processing
 
@@ -81,7 +81,7 @@ To complete the examples in this chapter you will need:
 
 -   **R** (version 4.0+) and **RStudio**
 
--   **R packages**: `terra`, `sf`, `ggplot2`, `tmap`, `dplyr`
+-   **R packages**: `terra (1.8-70)`, `sf 1.0-21`, `ggplot2 4.0.0`, `tmap 4.2`, `dplyr 1.1.4`
 
 -   **Data files**: RGB orthophoto, NDVI raster, boundary shapefiles (provided as an R project)
 
@@ -261,7 +261,7 @@ north(type=1)
 
 ### Calculating Plot-Level NDVI Statistics
 
-With the NDVI map, we can calculate statistics based on NDVI pixel values within each plot using zonal statistics functions. To minimize edge effects from mixed pixels at plot boundaries, a 0.5-meter negative buffer is applied to each plot polygon before extraction. Mixed pixels occur at boundary edges where a single pixel may capture reflectance from multiple land cover types, such as both roads, dirt paths or different crop types. The negative buffer shrinks each polygon inward by 0.5 meters, excluding these edge pixels from analysis and ensuring that extracted NDVI values represent only the interior of each agricultural plot:
+With the NDVI map, we can calculate statistics based on NDVI pixel values within each plot using zonal statistics functions. Satellite and UAV sensors divide the landscape into a grid of pixels, each representing a specific area on the ground. Problems arise at boundaries between land uses where pixels straddling these edges capture information from both surfaces. Instead of recording pure crop reflectance, these boundary pixels record a blend of signals from the crop and the adjacent road. To minimize edge effects from mixed pixels at plot boundaries, a 0.5-meter negative buffer is applied to each plot polygon before extraction. Mixed pixels occur at boundary edges where a single pixel captures reflectance from multiple land cover types, such as roads and vegetation, or different crop types. The negative buffer shrinks each polygon inward by 0.5 meters, excluding these edge pixels from analysis and ensuring that extracted NDVI values represent only the interior of each agricultural plot:
 
 ```{r}
 # Apply negative buffer to reduce edge contamination
