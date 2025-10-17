@@ -140,7 +140,7 @@ Next, examine the `plots` vector file.
 print(plots)
 ```
 
-The `print(plots)` output shows the shapefile contains 36 individual agricultural plots, each stored as polygon geometry with one attribute field (plot ID). The bounding box indicates the geographic extent in decimal degrees, and the data uses the WGS 84 coordinate system consistent with the orthophoto.
+The `print(plots)` output shows the shapefile contains 36 individual agricultural plots, each stored as polygon geometry with one attribute field (`id` or plot ID). The bounding box indicates the geographic extent in decimal degrees, and the data uses the WGS 84 coordinate system consistent with the orthophoto.
 
 Now examine the `study_area` shapefile using the same approach.
 
