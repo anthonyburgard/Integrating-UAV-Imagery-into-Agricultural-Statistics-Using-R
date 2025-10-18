@@ -39,13 +39,13 @@ The study area comprises a single census enumeration area located on the northea
 
 UAV imagery of the study area was captured on 28 August 2023 at midday. Two flight missions were conducted: the first using an RGB camera captured 347 aerial images (Figure 1), while the second using a multispectral sensor captured 318 images. Flight missions were planned using DJI Flight Planner software, where operators specified resolution requirements by setting flight height (\~100 meters) and image overlap percentages (\~80 percent) to ensure adequate coverage.
 
-![Figure 1. Position of 347 RGB aerial images](Chapter_20251013_files/ppt/flight%20path.png)
+![Figure 1. Position of 347 RGB aerial images](assets/ppt/flight%20path.png)
 
 The processing of these raw aerial images was conducted in [OpenDroneMap](https://opendronemap.org), a free and open-source photogrammetry software that stitches overlapping raw UAV images into a geometrically corrected single image known as an orthophoto. The software first uses a Structure-from-Motion (SfM) method (Marie et al, 2023)[^2], which identifies thousands of common feature points across the aerial images to reconstruct the camera's position for each photo and build an initial three-dimensional model of the terrain and its features (Figure 2).
 
 [^2]: <https://www.researchgate.net/publication/370057094_Open_Drone_Map_Structure-from-Motion_Workflow>
 
-![Figure 2. 3D model of Study Area constructed from RGB aerial images](Chapter_20251013_files/ppt/3dmodel.png)
+![Figure 2. 3D model of Study Area constructed from RGB aerial images](assets/ppt/3dmodel.png)
 
 Prior to the flights, operators surveyed the area to establish 23 Ground Control Points (GCPs), a centimeter-level precision point geographic coordinates distributed throughout the study area. The coordinates of these markers were measured using high-precision Global Navigation Satellite System (GNSS) receivers. During processing in OpenDroneMap, these GCPs are overlaid in the UAV imagery. The software then warps the 3D model to fit these known coordinates, correcting geometric distortions and ensuring the final orthophoto is accurately georeferenced. This step is critical for calculating reliable area calculations as it ensures the orthophoto is not biased by any distortions within the image.
 
@@ -53,9 +53,9 @@ The combination of the three-dimensional model and ground control points produce
 
 In addition to orthophotos, we also utilize OpenDroneMap to calculate crop health indicators for crop health analysis. The platform calculates 23 spectral indices from the multispectral orthophoto (Figure 3), and their calculations are documented on the OpenDroneMap github repository [here](https://github.com/OpenDroneMap/WebODM/blob/master/app/api/fields.py). These indices include the NDVI, which assesses plant vigor and photosynthetic activity. Additional indices enable detection of water stress, estimation of biomass, and soil reflectance in fallow areas.
 
-![](Chapter_20251013_files/ppt/spectralindices/Slide1.jpeg)
+![](assets/ppt/spectralindices/Slide1.jpeg)
 
-![Figure 3. Crop Health Algorithms in OpenDroneMap](Chapter_20251013_files/ppt/spectralindices/Slide2.jpeg)
+![Figure 3. Crop Health Algorithms in OpenDroneMap](assets/ppt/spectralindices/Slide2.jpeg)
 
 ### Agricultural Plot Delineation
 
@@ -77,7 +77,7 @@ The analysis utilizes four primary datasets:
 
 -   **Plot Boundaries**: 36 individual agricultural plot polygons digitized by a subject matter expert from the Cook Islands Ministry of Agriculture using the RGB Orthophoto as a basemap.
 
-To complete the examples in this chapter you will need:
+To implement the examples in this chapter we use:
 
 -   **R** (version 4.0+) and **RStudio**
 
@@ -332,7 +332,7 @@ However, higher resolution is not always better and involves important tradeoffs
 
 Satellite imagery is well-suited for large-scale regional or national agricultural monitoring where broad area coverage and frequent temporal revisits are priorities. UAVs are more appropriate for targeted interventions requiring detailed plot-level analysis, validation of satellite-based estimates, or monitoring of small, fragmented agricultural landscapes where coarser resolution would produce unacceptable mixed-pixel effects.
 
-Let's begin by loading in satellite imagery from Sentinel-2 (10 meters), and landsat-8 (30 meters) into R.
+Let's begin by loading in satellite imagery from Sentinel-2 (10 meters), and Landsat-8 (30 meters) into R.
 
 ```{r}
 # Load satellite imagery
