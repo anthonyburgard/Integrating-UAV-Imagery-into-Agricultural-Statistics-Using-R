@@ -41,11 +41,15 @@ UAV imagery of the study area was captured on 28 August 2023 at midday. Two flig
 
 ![Figure 1. Position of 347 RGB aerial images](assets/ppt/flight%20path.png)
 
+Source: Asian Development Bank visualization using OpenDroneMap 3.6.0. 2025. Manila.
+
 The processing of these raw aerial images was conducted in [OpenDroneMap](https://opendronemap.org), a free and open-source photogrammetry software that stitches overlapping raw UAV images into a geometrically corrected single image known as an orthophoto. The software first applies a Structure-from-Motion (SfM) method (Marie et al, 2023)[^2], which identifies thousands of common feature points across the aerial images to reconstruct the camera's position for each photo and build an initial three-dimensional model of the terrain and its features (Figure 2).
 
 [^2]: <https://www.researchgate.net/publication/370057094_Open_Drone_Map_Structure-from-Motion_Workflow>
 
 ![Figure 2. 3D model of Study Area constructed from RGB aerial images](assets/ppt/3dmodel.png)
+
+Source: Asian Development Bank visualization using OpenDroneMap 3.6.0. 2025. Manila.
 
 Prior to the flights, operators surveyed the area to establish 23 Ground Control Points (GCPs), a centimeter-level precision point geographic coordinates distributed throughout the study area. The coordinates of these markers were measured using high-precision Global Navigation Satellite System receivers. During processing in OpenDroneMap, these GCPs are overlaid in the UAV imagery. The software then warps the 3D model to fit these known coordinates, correcting geometric distortions and ensuring the final orthophoto is accurately georeferenced. This step is critical for reliable area calculations as it ensures the orthophoto is not biased by any distortions within the image.
 
@@ -56,6 +60,8 @@ In addition to orthophotos, OpenDroneMap was also used to calculate crop health 
 ![](assets/ppt/spectralindices/Slide1.jpeg)
 
 ![Figure 3. Crop Health Algorithms in OpenDroneMap](assets/ppt/spectralindices/Slide2.jpeg)
+
+Source: Asian Development Bank visualization using OpenDroneMap 3.6.0. 2025. Manila.
 
 ### Agricultural Plot Delineation
 
@@ -197,6 +203,8 @@ north(type=1) # Add scalebar and compass
 
 **Figure 4**: RGB Orthophoto showing the study area boundary (yellow) and individual agricultural plot boundaries (white).
 
+Source: Asian Development Bank visualization using terra 1.8.70. 2025. Manila.
+
 ### Area of Study and Plot boundaries
 
 To quantify the extent of the study area and plot boundaries, we calculate their areas:
@@ -226,6 +234,8 @@ hist(plots$area_m2,
 ```
 
 **Figure 5**: Distribution of plot sizes (square meters) in study area
+
+Source: Asian Development Bank visualization using R 4.5.1. 2025. Manila.
 
 ### Visualization of NDVI values
 
@@ -258,6 +268,8 @@ north(type=1)
 ```
 
 **Figure 6**: NDVI Orthophoto Showing Plot Boundaries and Study Area
+
+Source: Asian Development Bank visualization using terra 1.8.70. 2025. Manila.
 
 ### Calculating Plot-Level NDVI Statistics
 
@@ -306,6 +318,8 @@ tm_shape(plots) +
 
 **Figure 7**: Mean NDVI by Plot
 
+Source: Asian Development Bank visualization using tmap 1.8.70. 2025. Manila.
+
 Next, visualize the CV for each plot. The CV map highlights plots with high internal NDVI variability (yellow-green) versus uniform plots (red-orange). High variability may indicate mixed cropping systems, uneven crop growth, patchy vegetation coverage, varying soil conditions within a plot, or potential issues with plot boundary delineation, while low CV suggests more uniform vegetation across the plot.
 
 ```{r}
@@ -323,6 +337,8 @@ tm_shape(plots) +
 ```
 
 **Figure 8**: Coefficient of Variation by Plot
+
+Source: Asian Development Bank visualization using tmap 1.8.70. 2025. Manila.
 
 ### Resolution Comparison: UAV vs. Satellite Imagery
 
@@ -359,7 +375,9 @@ sbar(200, type="line", xy= "bottom", divs=8, below="meters", col= "yellow")
 north(type=1)
 ```
 
-**Figure 9**: Sentinel-2 True Color Image (10 meters)
+**Figure 9**: Sentinel-2 True Color Image (10m)
+
+Source: Asian Development Bank visualization using terra 1.8.70. 2025. Manila.
 
 #### Landsat-8 (30 m resolution)
 
@@ -376,7 +394,9 @@ sbar(200, type="line", xy= "bottom", divs=8, below="meters", col= "yellow")
 north(type=1)
 ```
 
-**Figure 10**: Landsat-8 True Color Image (30 meters)
+**Figure 10**: Landsat-8 True Color Image (30m)
+
+Source: Asian Development Bank visualization using terra 1.8.70. 2025. Manila.
 
 ### Quantifying Resolution Differences
 
