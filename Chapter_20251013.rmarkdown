@@ -7,7 +7,7 @@ editor: visual
 
 ## Introduction
 
-Accurate land area estimates form the foundation of reliable agricultural statistics, providing critical inputs for estimating crop production, calculating yield, and informing key agricultural policy decisions. Traditional ground surveys where these data are collected, however, face significant resource constraints, especially in the Pacific Islands, where environmental conditions, physical distance between islands, and natural barriers can make data collection cost-prohibitive.
+Accurate land area estimates form the foundation of reliable agricultural statistics, providing critical inputs for estimating crop production, calculating yield, and informing key agricultural policy decisions. Traditional ground surveys where these data are collected, however, face significant resource constraints, especially in the Pacific Islands, where environmental conditions, physical distances between islands, and natural barriers often make data collection cost-prohibitive.
 
 In 2022, the Asian Development Bank (ADB), in collaboration with the Cook Islands Ministry of Agriculture (MOA), conducted a post-enumeration survey on the island of Rarotonga to validate agricultural area estimates using global positioning systems (GPS) reported in the 2021 Cook Islands Census of Agriculture. The study revealed that farmers generally underestimated their agricultural land areas by approximately 13% relative to objective GPS measurements, with larger plots (\>2,000 m²) more likely underestimated and smaller plots slightly overestimated (ADB, 2024) [^1]. This discrepancy highlights the significance of non-sampling errors, specifically measurement error, that can systematically bias national agricultural production estimates.
 
