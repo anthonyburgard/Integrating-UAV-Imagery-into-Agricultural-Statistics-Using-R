@@ -465,19 +465,19 @@ Selecting appropriate imagery depends on the scale, budget, and objectives of th
 
 | Characteristic | Satellite Imagery | UAV Imagery |
 |------------------------|------------------------|------------------------|
-| **Spatial resolution** | Commercial: \~30 cm\<br\>Public: 10 m (Sentinel-2) to 1 km (MODIS) | 1-5 cm (dependent on flight altitude and sensor) |
-| **Spectral resolution** | Multispectral, SAR (radar)\<br\>Sentinel-2: 13 bands (visible to SWIR)\<br\>Landsat-8: 11 bands | RGB (standard); multispectral (5-10 bands), thermal, LiDAR possible with specialized sensors |
-| **Temporal resolution** | Sentinel-2: 5 days\<br\>Landsat: 16 days\<br\>MODIS: daily | User-controlled (on-demand)\<br\>Practical frequency: 2-4 flights/season due to cost/logistics |
-| **Coverage area** | Large area coverage\<br\>(e.g., Sentinel-2: 290 km swath) | Limited: 5-50 hectares per flight\<br\>Battery-constrained: 15-25 min per flight |
-| **Geometric accuracy** | Sentinel-2: \~10-20 m absolute\<br\>Landsat-8: \~12-30 m absolute\<br\>Commercial: \~3-5 m | With GCPs: ±5-10 cm\<br\>With RTK: ±2-5 cm\<br\>Without GCPs: ±2-5 m |
-| **Radiometric quality** | High (well-calibrated, multi-date consistent)\<br\>Surface reflectance products available | Variable (requires calibration panel)\<br\>Sensitive to illumination conditions |
-| **Cloud cover** | Major limitation in tropical regions\<br\>May wait weeks for cloud-free scenes | Flies below clouds (300-400 m typical cloud base)\<br\>Sensitive to wind/rain |
-| **Cost** | Public sources: free\<br\>Commercial: \$10-30/km² | Initial investment: \$2,000-\$40,000\<br\>Operational: \~\$500-2,000 per survey day |
-| **Data volume** | Moderate per unit area\<br\>Sentinel-2 scene: \~1 GB | Very large: RGB 3 GB, multispectral 1.7 GB raw per survey\<br\>orthophotos: 2-3 GB total |
-| **Processing complexity** | Low to moderate\<br\>Pre-processed products available | Moderate to high: requires photogrammetry expertise\<br\>3-8 hours on consumer laptop |
-| **Use cases** | National/regional crop mapping\<br\>Temporal monitoring\<br\>Broad land use classification\<br\>Change detection | plot delineation\<br\>Ground truthing\<br\>High-detail crop assessment\<br\>Infrastructure mapping |
-| **Advantages** | Broad coverage\<br\>Regular monitoring\<br\>Historical archives (40+ years)\<br\>Consistent calibration | Very high detail\<br\>Flexible timing\<br\>Below-cloud operations\<br\>Multi-sensor integration possible |
-| **Limitations** | Coarse resolution for small plots\<br\>Cloud interference\<br\>Fixed revisit schedules\<br\>Coarse for sub-field patterns | Limited coverage\<br\>Weather sensitive\<br\>Regulatory constraints\<br\>Processing intensive\<br\>Requires field operations |
+| **Spatial resolution** | Commercial: \~30 cm<br>Public: 10 m (Sentinel-2) to 1 km (MODIS) | 1-5 cm (dependent on flight altitude and sensor) |
+| **Spectral resolution** | Multispectral, SAR (radar)<br>Sentinel-2: 13 bands (visible to SWIR)<br>Landsat-8: 11 bands | RGB (standard); multispectral (5-10 bands), thermal, LiDAR possible with specialized sensors |
+| **Temporal resolution** | Sentinel-2: 5 days<br>Landsat: 16 days<br>MODIS: daily | User-controlled (on-demand)<br>Practical frequency: 2-4 flights/season due to cost/logistics |
+| **Coverage area** | Large area coverage<br>(e.g., Sentinel-2: 290 km swath) | Limited: 5-50 hectares per flight<br>Battery-constrained: 15-25 min per flight |
+| **Geometric accuracy** | Sentinel-2: \~10-20 m absolute<br>Landsat-8: \~12-30 m absolute<br>Commercial: \~3-5 m | With GCPs: ±5-10 cm<br>With RTK: ±2-5 cm<br>Without GCPs: ±2-5 m |
+| **Radiometric quality** | High (well-calibrated, multi-date consistent)<br>Surface reflectance products available | Variable (requires calibration panel)<br>Sensitive to illumination conditions |
+| **Cloud cover** | Major limitation in tropical regions<br>May wait weeks for cloud-free scenes | Flies below clouds (300-400 m typical cloud base)<br>Sensitive to wind/rain |
+| **Cost** | Public sources: free<br>Commercial: \$10-30/km² | Initial investment: \$2,000-\$40,000<br>Operational: \~\$500-2,000 per survey day |
+| **Data volume** | Moderate per unit area<br>Sentinel-2 scene: \~1 GB | Very large: RGB 3 GB, multispectral 1.7 GB raw per survey<br>orthophotos: 2-3 GB total |
+| **Processing complexity** | Low to moderate<br>Pre-processed products available | Moderate to high: requires photogrammetry expertise<br>3-8 hours on consumer laptop |
+| **Use cases** | National/regional crop mapping<br>Temporal monitoring<br>Broad land use classification<br>Change detection | plot delineation<br>Ground truthing<br>High-detail crop assessment<br>Infrastructure mapping |
+| **Advantages** | Broad coverage<br>Regular monitoring<br>Historical archives (40+ years)<br>Consistent calibration | Very high detail<br>Flexible timing<br>Below-cloud operations<br>Multi-sensor integration possible |
+| **Limitations** | Coarse resolution for small plots<br>Cloud interference<br>Fixed revisit schedules<br>Coarse for sub-field patterns | Limited coverage<br>Weather sensitive<br>Regulatory constraints<br>Processing intensive<br>Requires field operations |
 
 ## Discussion
 
