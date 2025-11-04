@@ -9,7 +9,7 @@ editor: visual
 
 Accurate land area estimates form the foundation of reliable agricultural statistics, providing critical inputs for estimating crop production, calculating yield, and informing key agricultural policy decisions. Traditional ground surveys where these data are collected, however, face significant resource constraints, especially in the Pacific Islands, where environmental conditions, physical distances between islands, and natural barriers often make data collection cost-prohibitive.
 
-In 2022, the Asian Development Bank (ADB), in collaboration with the Cook Islands Ministry of Agriculture (MOA), conducted a post-enumeration survey on the island of Rarotonga to validate agricultural area estimates using global positioning systems (GPS) reported in the 2021 Cook Islands Census of Agriculture. The study revealed that farmers generally underestimated their agricultural land areas by approximately 13% relative to objective GPS measurements, with larger plots (\>2,000 m²) more likely underestimated and smaller plots slightly overestimated (ADB, 2024) [^1]. This discrepancy highlights the significance of non-sampling errors, specifically measurement error, that can systematically bias national agricultural production estimates.
+In 2022, the Asian Development Bank (ADB), in collaboration with the Cook Islands Ministry of Agriculture (MOA), conducted a post-enumeration survey on the island of Rarotonga to validate agricultural area estimates using global positioning systems (GPS) reported in the 2021 Cook Islands Census of Agriculture. The study revealed that farmers generally underestimated their agricultural land areas by approximately 13% relative to objective GPS measurements, with larger plots (\>2,000 square meters) more likely underestimated and smaller plots slightly overestimated (ADB, 2024) [^1]. This discrepancy highlights the significance of non-sampling errors, specifically measurement error, that can systematically bias national agricultural production estimates.
 
 [^1]: <https://dx.doi.org/10.22617/TCS240326-2>
 
@@ -55,7 +55,7 @@ Prior to the flights, operators surveyed the area to establish 23 Ground Control
 
 The combination of the three-dimensional model and ground control points produces of an orthophoto, a geometrically corrected single image of the study area. This process is repeated for both RGB and multispectral imagery, resulting in two orthophotos of the same study area captured by two camera sensors.
 
-In addition to orthophotos, OpenDroneMap was also used to calculate crop health indicators. The platform calculates 23 spectral indices from the multispectral orthophoto (Figure 3), are documented on the OpenDroneMap github repository [here](https://github.com/OpenDroneMap/WebODM/blob/master/app/api/fields.py). These indices include the NDVI, which assesses plant vigor and photosynthetic activity. Additional indices enable detection of water stress, estimation of biomass, and soil reflectance in fallow areas.
+In addition to orthophotos, OpenDroneMap was also used to calculate crop health indicators. The platform calculates 23 spectral indices from the multispectral orthophoto (Figure 3), as documented on the OpenDroneMap github repository [here](https://github.com/OpenDroneMap/WebODM/blob/master/app/api/fields.py). These indices include the NDVI, which assesses plant vigor and photosynthetic activity. Additional indices enable detection of water stress, estimation of biomass, and soil reflectance in fallow areas.
 
 ![](assets/ppt/spectralindices/Slide1.jpeg)
 
@@ -65,11 +65,11 @@ Source: Asian Development Bank visualization using OpenDroneMap 3.6.0. 2025. Man
 
 ### Agricultural Plot Delineation
 
-Using the RGB orthophoto as a basemap, a subject matter expert from MOA manually digitized plot boundaries as polygon features in QGIS based on visual inspection of land use and plot boundaries of areas cultivated for crops. This digitization process produced 36 individual agricultural plot polygons.
+Using the RGB orthophoto as a basemap, a subject matter expert from the MOA manually digitized plot boundaries as polygon features in QGIS based on visual inspection of land use and plot boundaries of areas cultivated for crops. This digitization process produced 36 individual agricultural plot polygons.
 
 ### Study objectives
 
-This chapter provides an analytical framework for working with UAV imagery in R to produce agricultural statistics. Specific objectives include importing and harmonizing raster layers (RGB and NDVI orthophotos) and vector boundaries (study area and plot polygons) to a CRS, extracting agricultural statistics through zonal analysis of NDVI values for individual plots, calculating plot areas, and comparing spatial resolution across UAV, Sentinel-2, and Landsat-8 imagery to quantify the mixed-pixel effect and its implications for area estimation accuracy
+This chapter provides an analytical framework for working with UAV imagery in R to produce agricultural statistics. Specific objectives include importing and harmonizing raster layers (RGB and NDVI orthophotos) and vector boundaries (study area and plot polygons) to a common CRS, extracting agricultural statistics through zonal analysis of NDVI values for individual plots, calculating plot areas, and comparing spatial resolution across UAV, Sentinel-2, and Landsat-8 imagery to quantify the mixed-pixel effect and its implications for area estimation accuracy
 
 ### Data and Software Requirements
 
@@ -287,7 +287,7 @@ Next, calculate NDVI statistics for each plot, including mean, standard deviatio
 plot_ndvi <- terra::extract(ndvi, plots_buffered, fun=mean, na.rm=TRUE)
 plots$ndvi_mean <- plot_ndvi[,2]
 
-# Calculate additional summmary statistics (min, max, sd) for each buffered plot
+# Calculate additional summary statistics (min, max, sd) for each buffered plot
 plot_ndvi_sd <- terra::extract(ndvi, plots_buffered, fun=sd, na.rm=TRUE)
 plot_ndvi_min <- terra::extract(ndvi, plots_buffered, fun=min, na.rm=TRUE)
 plot_ndvi_max <- terra::extract(ndvi, plots_buffered, fun=max, na.rm=TRUE)
